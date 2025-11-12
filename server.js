@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
-app.use(express.static("public")); // change to your folder name if needed
+app.use(express.static("views")); // change to your folder name if needed
 
 const server = http.createServer(app);
 
