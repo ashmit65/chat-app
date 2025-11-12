@@ -1,4 +1,4 @@
-const socket = io("http://localhost:8000")
+const socket = io()
 
 const name = prompt("Enter Your Name To Join the Chat")?.trim() || `User${Math.floot(Math.random() * 1000)}`
 socket.emit("user-joined", name)
