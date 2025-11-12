@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
-app.use(express.static("views")); // change to your folder name if needed
+app.use(express.static("views"));
 
 const server = http.createServer(app);
 
@@ -16,12 +16,12 @@ const io = new Server(server, {
 });
 
 const PORT = process.env.PORT || 8000;
-server.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 const users = {};
 
 io.on("connection", (socket) => {
-  console.log("⚡ New connection");
+  console.log("New connection");
 
   socket.on("user-joined", (name) => {
     users[socket.id] = name;
